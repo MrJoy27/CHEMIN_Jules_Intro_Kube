@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon-api
+  template:
+    metadata:
+      labels:
+        app: mon-api
+    spec:
+      containers:
+      - name: mon-api
+        image: mrjoy27/mon-api:1.0
+        ports:
+        - containerPort: 8000
