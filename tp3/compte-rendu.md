@@ -7,8 +7,6 @@ mon-api-service       ClusterIP   10.233.22.112   <none>        80/TCP     15s
 vscode-python-20690   ClusterIP   None            <none>        8080/TCP   17h
 vscode-python-65625   ClusterIP   None            <none>        8080/TCP   18h
 
-kubectl run test-curl1 --image=curlimages/curl --restart=Never --rm -it -- curl http://mon-api-service:8000/hello
-"world"
 
 Problématique des pods
 
@@ -32,3 +30,5 @@ backend-3-tier-deployment    3/3     3            3           12m
 frontend-3-tier-deployment   3/3     3            3           12m
 mon-api-deployment           3/3     3            3           18h
 postgres                     1/1     1            1           12m
+
+Si on redémarre le service postgre on perd les données => il n y a pas de persistance
