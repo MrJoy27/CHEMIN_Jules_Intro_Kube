@@ -1,6 +1,6 @@
 # COMPTE-RENDU TP2
 
-Il faut bien écrire le fichier deployment.yaml. Je suis reparti de l'exemple donné dans le cours. Il suffit de modifier le nom de l'API ainsi que mon pseudo Docker Hub.
+Il faut bien écrire le fichier deployment.yaml. Je suis reparti de l'exemple donné dans le cours. Il suffit de modifier le nom du docker ainsi que mon pseudo Docker Hub.
 
 Ensuite, pour déployer, il faut faire :
 
