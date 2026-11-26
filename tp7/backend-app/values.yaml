@@ -1,0 +1,28 @@
+replicaCount: 3
+
+image:
+  repository: hugosmn5/backend-3-tier
+  pullPolicy: IfNotPresent
+  tag: "1.1"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+env:
+  DB_USER: "admin"
+  DB_PASS: "password"
+  DB: "reviews"
+  DB_HOST: "postgres-service"
+volumes:
+  - name: tmp
+    emptyDir: {}
+volumeMounts:
+  - name: tmp
+    mountPath: /tmp
