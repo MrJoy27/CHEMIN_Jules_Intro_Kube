@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mon-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mon-api
+  template:
+    metadata:
+      labels:
+        app: mon-api
+    spec:
+      containers:
+      - name: mon-api
+        image: mrjoy27/mon-api:2.0
+        ports:
+        - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 10
